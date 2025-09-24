@@ -11,6 +11,10 @@ function typeWriter() {
         if (char === '\n') {
             textElement.innerHTML += '<br>';
             i++;
+            setTimeout(typeWriter, 0);
+        } else if (char === '.' || char === ',') {
+            textElement.innerHTML += char;
+            i++;
             // 改行のときは lineDelay を使う
             setTimeout(typeWriter, lineDelay);
         } else {
